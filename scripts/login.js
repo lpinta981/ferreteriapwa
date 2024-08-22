@@ -1,0 +1,18 @@
+document.getElementById('login-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
+    const usuario = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    const response = await fetch('https://script.google.com/macros/s/1AKnDwpiba4E8qAuRKpWXLdMvRWClUMfL4vWkCkfDikWlYmdy1gF9nP45/exec', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuario, password }),
+    });
+
+    const result = await response.json();
+    if (result.autorizado) {
+        window.location.href = 'pages/dashboard.html';
+    } else {
+        alert('Usuario o contraseña incorrectos');
+    }
+});
