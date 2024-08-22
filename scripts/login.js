@@ -3,7 +3,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
     const usuario = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    const response = await fetch('https://script.google.com/macros/s/1AKnDwpiba4E8qAuRKpWXLdMvRWClUMfL4vWkCkfDikWlYmdy1gF9nP45/exec', {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbyhQI-T-F-NBEqIQQCoMBQDUMw_rlPKRn-1PNO68vjjtTNUv_GNssMYLhDmLYA4mBHJ/exec', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ usuario, password }),
